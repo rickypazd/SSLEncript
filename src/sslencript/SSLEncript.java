@@ -54,7 +54,7 @@ public class SSLEncript {
     private static final String CERTIFICATE_NAME = "keystore.key";
 
     public static void main(String[] args) {
-        server.getInstance();
+        
 //        try {
 //            KeyStore keyStore = SSLEvent.createKeyStore(CERTIFICATE_NAME, CERTIFICATE_PASS);
 //            Certificate certificate = keyStore.getCertificate(CERTIFICATE_ALIAS);
