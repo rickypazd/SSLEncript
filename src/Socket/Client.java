@@ -26,12 +26,16 @@ public class Client {
     
     public Client(String ip){
         try {
+            System.out.print("Conectando con el server.");
             this.ip=ip;
             clientSocket = new Socket(ip, port);
+            System.out.print(".");
             out = new PrintWriter(clientSocket.getOutputStream(), true);
+            System.out.print(".");
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            System.out.print(".");
         } catch (Exception ex) {
-            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.print("Error en la conexion...");
         }
     }
     
@@ -41,7 +45,7 @@ public class Client {
         return resp;
     }
  
-    public void stopConnection() throws IOException {
+    public void close() throws IOException {
         in.close();
         out.close();
         clientSocket.close();
