@@ -14,9 +14,10 @@ public class jfCliente extends javax.swing.JFrame {
     /**
      * Creates new form Index_JF
      */
-    public jfCliente() {
+    public jfCliente(String ip) {
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH);
+        this.setVisible(true);
         
     }
 
@@ -108,7 +109,7 @@ public class jfCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jfCliente().setVisible(true);
+                new jfCliente("localhost").setVisible(true);
             }
         });
     }

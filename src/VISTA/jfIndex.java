@@ -114,7 +114,7 @@ public class jfIndex extends javax.swing.JFrame {
                 break;
             case "Cliente":
                  String t_jtip1 = jtip1.getText();
-                 new jfCliente();
+                 new jfCliente(jtip1.getText());
                  System.out.println("Conectando Cliente" + t_jtip1);
                 break;
         }
