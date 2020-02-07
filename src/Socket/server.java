@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextArea;
 import sslencript.SSLEncript;
 
 /**
@@ -27,8 +28,11 @@ public class server {
     private static server INSTANCE;
     private ServerSocket serverSocket;
     private Socket socket;
+    private static JTextArea jtConsolea;
 
-    public static server getInstance() {
+    private static int PORT = 6868;
+    public static server getInstance(JTextArea jtConsole) {
+        jtConsolea= jtConsole;
         if (INSTANCE == null) {
             INSTANCE = new server();
         }
@@ -37,8 +41,10 @@ public class server {
 
     private server() {
         try {
-            serverSocket = new ServerSocket(6868);
-            hilo();
+            serverSocket = new ServerSocket(PORT);
+              hilo();
+            jtConsolea.setText(jtConsolea.getText()+"\n"+"Running on port: "+PORT);
+          
 
         } catch (IOException ex) {
             Logger.getLogger(server.class.getName()).log(Level.SEVERE, null, ex);
@@ -63,8 +69,8 @@ public class server {
                         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                         
                         String line = reader.readLine();
-                       
-                        System.out.println( SSLEncript.recivir(line));
+                        jtConsolea.setText(jtConsolea.getText()+"\n"+ SSLEncript.recivir(line));
+                        
                     }
 
                 } catch (IOException e) {
