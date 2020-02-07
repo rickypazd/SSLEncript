@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sslencript;
+package Socket;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,20 +17,21 @@ import java.util.logging.Logger;
  *
  * @author ricky
  */
-public class client {
+public class Client {
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
     private String ip = "192.168.1.103";
     private int port = 6868;
     
-    public client(){
+    public Client(String ip){
         try {
+            this.ip=ip;
             clientSocket = new Socket(ip, port);
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         } catch (Exception ex) {
-            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
