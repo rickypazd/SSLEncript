@@ -50,7 +50,7 @@ public class jfIndex extends javax.swing.JFrame {
 
         jLabel2.setText("Mode:");
 
-        JcMode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Server", " " }));
+        JcMode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Server" }));
         JcMode.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 JcModeItemStateChanged(evt);

@@ -5,7 +5,8 @@
         <group>
             <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/sslencript/RSA.java</file>
             <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/sslencript/SSLEncript.java</file>
-            <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/sslencript/X509CertificateGenerator.java</file>
+            <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/Socket/server.java</file>
+            <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/VISTA/jfServer.java</file>
             <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/sslencript/SSLEvent.java</file>
         </group>
     </open-files>
