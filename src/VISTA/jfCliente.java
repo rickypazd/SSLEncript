@@ -17,13 +17,14 @@ import java.util.logging.Logger;
 public class jfCliente extends javax.swing.JFrame {
 
     private Client cliente;
+    String chat = "";
     /**
      * Creates new form Index_JF
      */
     public jfCliente(String ip) {
         initComponents();
         this.setVisible(true);
-        cliente = new Client(ip);
+        cliente = new Client(ip, this);
     }
 
     /**
@@ -39,7 +40,7 @@ public class jfCliente extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtChat = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtMensaje = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -52,9 +53,9 @@ public class jfCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jtChat.setColumns(20);
+        jtChat.setRows(5);
+        jScrollPane1.setViewportView(jtChat);
 
         jtMensaje.setColumns(20);
         jtMensaje.setRows(5);
@@ -73,7 +74,7 @@ public class jfCliente extends javax.swing.JFrame {
         });
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "Session 1" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -156,19 +157,22 @@ public class jfCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
     private void enviar(){
         try{
-        String mensaje = jtMensaje.getText();
-        cliente.sendMessage(mensaje);
+            cliente.sendMessage(jtMensaje.getText());
+            pintarEnviado();
+            jtMensaje.setText("");
+            jtMensaje.grabFocus();
         }catch(Exception e){
             e.printStackTrace();
         }
     }
     
-    private void pintarEnviado(){
-    
+    public void pintarEnviado(){
+        chat+="Ruddy:"+jtMensaje.getText()+"\n";
+        jtChat.setText(chat);
     }
-    
-    private void pintarRecivido(){
-    
+    public void pintarRecivido(String recivido){
+        chat+="Ricky:"+recivido+"\n";
+        jtChat.setText(chat);
     }
     
     public static void main(String args[]) {
@@ -217,7 +221,7 @@ public class jfCliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jtChat;
     private javax.swing.JTextArea jtMensaje;
     // End of variables declaration//GEN-END:variables
 }
