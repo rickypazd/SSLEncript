@@ -115,12 +115,6 @@ public class jfIndex extends javax.swing.JFrame {
                  System.out.println("Conectando Cliente" + t_jtip1);
                 break;
         }
-      
-       
-        
-        
-
-
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void JcModeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JcModeItemStateChanged
