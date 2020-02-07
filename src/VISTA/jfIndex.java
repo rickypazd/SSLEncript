@@ -41,6 +41,7 @@ public class jfIndex extends javax.swing.JFrame {
 
         jLabel1.setText("SOCKET");
 
+        jtip1.setText("192.168.1.103");
         jtip1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtip1ActionPerformed(evt);
