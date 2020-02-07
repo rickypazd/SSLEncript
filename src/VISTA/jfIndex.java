@@ -16,7 +16,8 @@ public class jfIndex extends javax.swing.JFrame {
      */
     public jfIndex() {
         initComponents();
-        this.setExtendedState(this.MAXIMIZED_BOTH);
+         setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -36,7 +37,7 @@ public class jfIndex extends javax.swing.JFrame {
         JcMode = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("SOCKET");
 
@@ -109,12 +110,15 @@ public class jfIndex extends javax.swing.JFrame {
         switch ( JcMode.getSelectedItem().toString()) {
             case "Server":
                  System.out.println("Conectando Server");
+                 new jfServer().setVisible(true);
                 break;
             case "Cliente":
                  String t_jtip1 = jtip1.getText();
+                 new jfCliente();
                  System.out.println("Conectando Cliente" + t_jtip1);
                 break;
         }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void JcModeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JcModeItemStateChanged
