@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/sslencript/RSA.java</file>
-            <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/sslencript/SSLEncript.java</file>
-            <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/Socket/server.java</file>
-            <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/VISTA/jfServer.java</file>
-            <file>file:/Users/ricardopazdemiquel/NetBeansProjects/SSLEncript/src/sslencript/SSLEvent.java</file>
+            <file>file:/C:/Users/ricky/Desktop/SSLEncript/src/sslencript/SSLEvent.java</file>
+            <file>file:/C:/Users/ricky/Desktop/SSLEncript/src/Socket/clientSession.java</file>
+            <file>file:/C:/Users/ricky/Desktop/SSLEncript/src/Socket/Client.java</file>
+            <file>file:/C:/Users/ricky/Desktop/SSLEncript/src/Socket/server.java</file>
+            <file>file:/C:/Users/ricky/Desktop/SSLEncript/src/VISTA/jfCliente.java</file>
+            <file>file:/C:/Users/ricky/Desktop/SSLEncript/src/sslencript/SSLClientAuthenticationWithCertificate.java</file>
         </group>
     </open-files>
 </project-private>
