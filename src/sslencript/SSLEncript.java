@@ -51,25 +51,25 @@ public class SSLEncript {
     private static final String CERTIFICATE_PASS = "poloclub78";
 
     private static final String CERTIFICATE_DN = "CN=Ricardo Paz Demiquel,OU=SRL,O=Servisis,L=Santa Cruz de la Sierra,ST=Santa Cruz,C=BO";
-    private static final String CERTIFICATE_NAME = "keystore.key";
+    private static final String CERTIFICATE_NAME = "keystore.jks";
 
     public static void main(String[] args) {
         
-//        try {
-//            KeyStore keyStore = SSLEvent.createKeyStore(CERTIFICATE_NAME, CERTIFICATE_PASS);
-//            Certificate certificate = keyStore.getCertificate(CERTIFICATE_ALIAS);
-//            byte[] texto = enviar("Hola Mundo", certificate);
-//            
-//            Key key = keyStore.getKey(CERTIFICATE_ALIAS, CERTIFICATE_PASS.toCharArray());
+        try {
+            KeyStore keyStore = SSLEvent.createKeyStore(CERTIFICATE_NAME, CERTIFICATE_PASS);
+            Certificate certificate = keyStore.getCertificate(CERTIFICATE_ALIAS);
+            byte[] texto = enviar("Hola Mundo", certificate);
+            
+            Key key = keyStore.getKey(CERTIFICATE_ALIAS, CERTIFICATE_PASS.toCharArray());
 //            String text =recivir(texto, key);
-//
+
 //            System.out.println(text);
-//            
-//           
-//
-//        } catch (Exception ex) {
-//            Logger.getLogger(SSLEncript.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+            
+           
+
+        } catch (Exception ex) {
+            Logger.getLogger(SSLEncript.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
