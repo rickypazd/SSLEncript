@@ -6,6 +6,7 @@
 package sslencript;
 
 import Socket.server;
+import static java.awt.SystemColor.text;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -47,11 +48,11 @@ public class SSLEncript {
     /**
      * @param args the command line arguments
      */
-    private static final String CERTIFICATE_ALIAS = "prueba_socket";
-    private static final String CERTIFICATE_PASS = "poloclub78";
+    private static final String CERTIFICATE_ALIAS = "usuario";
 
     private static final String CERTIFICATE_DN = "CN=Ricardo Paz Demiquel,OU=SRL,O=Servisis,L=Santa Cruz de la Sierra,ST=Santa Cruz,C=BO";
     private static final String CERTIFICATE_NAME = "keystore.jks";
+    private static final String CERTIFICATE_PASS = "poloclub78";
 
     public static void main(String[] args) {
         
@@ -61,9 +62,9 @@ public class SSLEncript {
             byte[] texto = enviar("Hola Mundo", certificate);
             
             Key key = keyStore.getKey(CERTIFICATE_ALIAS, CERTIFICATE_PASS.toCharArray());
-//            String text =recivir(texto, key);
+            
 
-//            System.out.println(text);
+            System.out.println(text);
             
            
 
