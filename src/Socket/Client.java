@@ -23,16 +23,16 @@ public class Client {
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
-    private String ip = "192.168.1.103";
-    private int port = 6868;
+    private String ips = "ruddypazd.com";
+    private int port = 5000;
     jfCliente view;
     
     public Client(String ip, jfCliente view){
         try {
             this.view = view; 
             System.out.print("Conectando con el server");
-            this.ip=ip;
-            clientSocket = new Socket(ip, port);
+            //this.ip=ip;
+            clientSocket = new Socket(ips, port);
             System.out.print(".");
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             System.out.print(".");
@@ -49,8 +49,9 @@ public class Client {
     
     public void sendMessage(String msg) throws IOException {
         out.println(msg);
+        out.flush();
         System.out.println(msg);
-        recivedMessage();
+        //recivedMessage();
     }
     
     public void recivedMessage(){

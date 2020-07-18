@@ -31,7 +31,6 @@ public class Session extends Thread {
         this.socket = socket;
         try {
             outpw = new PrintWriter(socket.getOutputStream(), true);
-            outpw.println("asd");
             outpw.flush();
         } catch (IOException ex) {
             Logger.getLogger(Session.class.getName()).log(Level.SEVERE, null, ex);
@@ -42,7 +41,7 @@ public class Session extends Thread {
 ////
 
     public void send(String mensaje) {
-        outpw.println(mensaje);
+        outpw.print(mensaje);
         outpw.flush();
     }
 

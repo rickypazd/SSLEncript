@@ -47,17 +47,18 @@ public class SSLEncript {
     /**
      * @param args the command line arguments
      */
-    private static final String CERTIFICATE_ALIAS = "prueba_socket";
+    private static final String CERTIFICATE_ALIAS = "servervps";
     private static final String CERTIFICATE_PASS = "poloclub78";
 
-    private static final String CERTIFICATE_DN = "CN=Ricardo Paz Demiquel,OU=SRL,O=Servisis,L=Santa Cruz de la Sierra,ST=Santa Cruz,C=BO";
-    private static final String CERTIFICATE_NAME = "keystore.jks";
+    private static final String CERTIFICATE_DN = "CN=204.93.165.196,OU=SRL,O=Servisis,L=Santa Cruz de la Sierra,ST=Santa Cruz,C=BO";
+    private static final String CERTIFICATE_NAME = "servervps.jks";
 
     public static void main(String[] args) {
         
         try {
             KeyStore keyStore = SSLEvent.createKeyStore(CERTIFICATE_NAME, CERTIFICATE_PASS);
             Certificate certificate = keyStore.getCertificate(CERTIFICATE_ALIAS);
+            crearJKS();
             byte[] texto = enviar("Hola Mundo", certificate);
             
             Key key = keyStore.getKey(CERTIFICATE_ALIAS, CERTIFICATE_PASS.toCharArray());
